@@ -1,7 +1,10 @@
+import figlet from 'figlet';
+
 const serve = Bun.serve({
 	port: 3000,
-	fetch (req) {
-		return new Response('Bun!');
+	fetch () {
+		const body = figlet.textSync('Argos Bun!');
+		return new Response(body);
 	},
 });
 
