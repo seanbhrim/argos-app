@@ -1,11 +1,11 @@
-import figlet from 'figlet';
+import figlet from "figlet";
 
-const serve = Bun.serve({
-	port: 3000,
-	fetch () {
-		const body = figlet.textSync('Argos Bun!');
-		return new Response(body);
-	},
+const server = Bun.serve({
+  fetch() {
+    const body = figlet.textSync("Argos!");
+    return new Response(body);
+  },
+  port: 3000,
 });
 
-console.log(`Listening on http://localhost:${serve.port} ...`)
+console.log(`Listening on http://localhost:${server.port} ...`);
